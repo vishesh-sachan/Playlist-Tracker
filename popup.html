@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      padding: 10px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #FF0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #CC0000;
+    }
+    .output {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; align-items:center; justify-content: center;">
+    <h3>YouTube Playlist Duration</h3>
+  </div>
+  <div style="background-color: #f8f8f8; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 13px;">
+    <p style="margin: 0; color: #666;">
+      Created by a sleep-deprived coder remembering those all-nighters. 
+      This tool tells you how much time you'll waste on YouTube! &#128187;&#9749;
+      <br><br>
+      - Vishesh Sachan
+    </p>
+  </div>
+  <input type="text" id="playlistUrl" placeholder="Enter YouTube Playlist URL">
+  <button id="calculateBtn">Calculate Duration</button>
+  <div class="output" id="output"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
