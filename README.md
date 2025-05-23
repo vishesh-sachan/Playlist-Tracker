@@ -6,3 +6,11 @@ Calculate playlist duration instantly - perfect for students planning their stud
 2. Get your YouTube Data API v3 and paste it in background.js file in apikey variable
 3. Save background.js file then load Extension into Browser
 4. Then it Should Run
+
+## Preview
+
+Here are some screenshots of the application in action:
+
+| Home Screen | Playlist Input | Duration Result |
+|-------------|---------------|----------------|
+| ![Home Screen](images/1.png) | ![Playlist Input](images/2.png) | ![Duration Result](images/3.png) |
