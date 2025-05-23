@@ -1,23 +1,29 @@
-document.getElementById('calculateBtn').addEventListener('click', function() {
-    let playlistUrl = document.getElementById('playlistUrl').value;
-    
+document.addEventListener('DOMContentLoaded', function() {
+  const calculateBtn = document.getElementById('calculateBtn');
+  const playlistUrlInput = document.getElementById('playlistUrl');
+  const outputDiv = document.getElementById('output');
+
+  calculateBtn.addEventListener('click', function() {
+    let playlistUrl = playlistUrlInput.value;
+
+    outputDiv.style.display = 'none';
+    outputDiv.innerText = '';
+
     if (playlistUrl) {
-      // Show the "Calculating..." message immediately
-      document.getElementById('playlistUrl').value = '';
-      document.getElementById('output').innerText = "Calculating...";
-  
-      // Send the request to background.js
+      playlistUrlInput.value = '';
+      outputDiv.innerText = "Calculating...";
+      outputDiv.style.display = 'block';
+
       chrome.runtime.sendMessage({ action: 'calculateDuration', url: playlistUrl }, function(response) {
         if (response.error) {
-          // Display error message if there's an error
-          document.getElementById('output').innerText = "Error: " + response.error;
+          outputDiv.innerText = "Error: " + response.error;
         } else {
-          // Display the calculated duration
-          document.getElementById('output').innerText = response.duration;
+          outputDiv.innerText = response.duration;
         }
       });
     } else {
-      document.getElementById('output').innerText = "Please enter a valid URL.";
+      outputDiv.innerText = "Please enter a valid URL.";
+      outputDiv.style.display = 'block';
     }
   });
-  
+});

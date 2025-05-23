@@ -1,50 +1,138 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Playlist Duration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      width: 300px;
-      padding: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      width: 320px;
+      padding: 20px;
+      background-color: #f0f2f5;
+      color: #333;
+      text-align: center;
     }
-    input[type="text"] {
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .header h2 {
+      font-family: 'Bangers', cursive;
+      color: #EF4823;
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .header img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .intro-box {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      text-align: left;
       width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
       box-sizing: border-box;
     }
+
+    .intro-box p {
+      margin: 0;
+    }
+
+    .author {
+      font-weight: 600;
+      color: #777;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #FF0000;
+      box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+    }
+
     button {
       width: 100%;
-      padding: 10px;
-      background-color: #FF0000;
+      padding: 14px;
+      background-color: #EF4823;
       color: white;
       border: none;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(255, 0, 0, 0.2);
     }
+
     button:hover {
-      background-color: #CC0000;
+      background-color: #E60000;
+      transform: translateY(-2px);
     }
+
+    button:active {
+      transform: translateY(0);
+    }
+
     .output {
-      margin-top: 10px;
+      margin-top: 20px;
+      font-size: 15px;
+      color: #333;
+      background-color: #e9ecef;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      min-height: 20px;
+      word-wrap: break-word;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div style="display: flex; align-items:center; justify-content: center;">
-    <h3>YouTube Playlist Duration</h3>
+  <div class="header">
+    <img src="images/youtube.svg" alt="YouTube Icon">
+    <h2>Playlist Duration</h2>
   </div>
-  <div style="background-color: #f8f8f8; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 13px;">
-    <p style="margin: 0; color: #666;">
-      Created by a sleep-deprived coder remembering those all-nighters. 
-      This tool tells you how much time you'll waste on YouTube! &#128187;&#9749;
-      <br><br>
-      - Vishesh Sachan
-    </p>
+
+  <div class="intro-box">
+    <p> <b>Ever been in a "one night before end-sem" crunch? </b>sleepless nights and endless coffee. This tool was literally born from that exact chaos! 🤯 When every minute counts, knowing a playlist's total duration became crucial. So, here's a little something crafted by one of us, for all of us. </p>
+    <span class="author">- Vishesh Sachan, your fellow engineering survivor</span>
+    <span class="author">- <b> Feedback: </b> visheshsachan23@gmail.com</span>
   </div>
-  <input type="text" id="playlistUrl" placeholder="Enter YouTube Playlist URL">
-  <button id="calculateBtn">Calculate Duration</button>
+
+  <input type="text" id="playlistUrl" placeholder="🔗 Paste your YouTube Playlist URL here">
+  <button id="calculateBtn">Calculate Play Time!</button>
   <div class="output" id="output"></div>
+
   <script src="popup.js"></script>
 </body>
 </html>

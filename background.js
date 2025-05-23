@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       throw new Error("Invalid YouTube playlist URL.");
     }
   
-    const apiKey = '';// your YouTube Data API v3
+    const apiKey = ''; // put YouTube Data V3 api key
     let nextPageToken = '';
     let totalDuration = 0;
   
